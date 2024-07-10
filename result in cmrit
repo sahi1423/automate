@@ -1,0 +1,30 @@
+package selenium;
+import org.openqa.selenium.By;
+//import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
+
+public class resultCmrit {
+
+	public static void main(String[] args) throws Exception
+	{
+	System.setProperty("webdriver.chromedriver","C:\\Users\\BALA PAVAN KUMAR\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://cmrithyderabad.edu.in/");
+	Thread.sleep(2000);
+	WebElement searchBar = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[4]/a"));
+	searchBar.click();
+	Thread.sleep(5000);
+	WebElement Results_Option = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[4]/ul/li[4]/a"));
+	Results_Option.click();
+	WebElement Result_Page_Search_Input = driver.findElement(By.id("searchKey"));
+	Result_Page_Search_Input.sendKeys("IV Year I Sem");
+	Thread.sleep(5000);
+	driver.quit();
+
+	}
+}
