@@ -9,15 +9,16 @@ import org.openqa.selenium.support.ui.Select;
 public class gmail {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\BALA PAVAN KUMAR\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AdF4I76OeN-kJ1RMxRzs6bjjYR39Y7ggkomY2bImtb2s3gD2phO2UsL3GQ3DtQJ0iIbKU0ED-EqV&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1409743055%3A1720373371257348&ddm=0");
-		WebElement acnt=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[1]/div/button/span"));
-		acnt.click();
+		driver.get("http://gmail.com/");
+		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		WebElement personal=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[3]"));
-		personal.click();
-		Thread.sleep(2000);
+		WebElement createAccount = driver.findElement(By.xpath("(//span[normalize-space()='Create account'])[1]"));
+		createAccount.click();
+		WebElement mySelft = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[3]"));
+		mySelft.click();
+		
 		WebElement firstname=driver.findElement(By.name("firstName"));
 		firstname.sendKeys("nerella");
 		Thread.sleep(2000);
