@@ -1,0 +1,574 @@
+ALL THE BEST GUYSS !!!!!!!! JAGRATHAGA COPY KOTANDII
+WEEK-2------------------MERCURY WEBSITE
+package two;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+
+public class week2 {
+public static void main(String[] args) throws InterruptedException
+{
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://www.mercurytravels.co.in/");
+Thread.sleep(2000);
+Actions builder = new Actions(driver);
+WebElement customerLogin =
+driver.findElement(By.xpath("/html/body/nav[2]/div/div[2]/ul/li[1]/a"));
+builder.moveToElement(customerLogin).perform();
+WebElement register =
+driver.findElement(By.xpath("(//a[@href='#'][normalize-space()='Register'])[2]"));
+register.click();
+Thread.sleep(2000);
+WebElement firstName =
+driver.findElement(By.xpath("(//input[@id='acc_first_name'])[1]"));
+firstName.sendKeys("shu");
+WebElement lastName =
+driver.findElement(By.xpath("(//input[@id='acc_last_name'])[1]"));
+lastName.sendKeys("kama");
+WebElement emailId =
+driver.findElement(By.xpath("(//input[@id='acc_user_email'])[1]"));
+emailId.sendKeys("rakshitha@gmail.com");
+WebElement setPassword =
+driver.findElement(By.xpath("(//input[@id='acc_user_password'])[1]"));
+setPassword.sendKeys("shu123");
+WebElement confirmPassword =
+driver.findElement(By.xpath("(//input[@id='acc_user_passconf'])[1]"));
+confirmPassword.sendKeys("shu123");
+WebElement mobileNumber =
+driver.findElement(By.xpath("(//input[@id='acc_mobile_no'])[1]"));
+mobileNumber.sendKeys("9305901106");
+WebElement registerBtn =
+driver.findElement(By.xpath("(//button[normalize-space()='Register'])[1]"));
+registerBtn.click();
+Thread.sleep(5000);
+driver.close();
+}
+}
+
+
+
+
+WEEK-3------------------FACEBOOK
+package two;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class week3 {
+public static void main(String[] args) throws InterruptedException
+{
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://www.facebook.com/");
+Thread.sleep(500);
+WebElement createNewAccountButton = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[5]/a"));
+createNewAccountButton.click();
+Thread.sleep(500);
+WebElement firstName = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div[1]/div[1]/div/input"));
+firstName.sendKeys("ashu");
+WebElement surName = driver.findElement(By.name("lastname"));
+surName.sendKeys("kamatam");
+WebElement mobileNoOrEmailId= driver.findElement(By.name("reg_email__"));
+mobileNoOrEmailId.sendKeys("1234567890");
+WebElement password = driver.findElement(By.name("reg_passwd__"));
+password.sendKeys("123ashu");
+Thread.sleep(500);
+Select dateDropdown = new
+Select(driver.findElement(By.name("birthday_day")));
+dateDropdown.selectByValue("24");
+Thread.sleep(500);
+Select monthDropdown = new
+Select(driver.findElement(By.name("birthday_month")));
+monthDropdown.selectByValue("12");
+Thread.sleep(500);
+Select yearDropdown = new
+Select(driver.findElement(By.name("birthday_year")));
+yearDropdown.selectByValue("1996");
+Thread.sleep(500);
+WebElement femaleRadioBtn =
+driver.findElement(By.xpath("(//label[normalize-space()='Female'])[1]"));
+femaleRadioBtn.click();
+Thread.sleep(500);
+WebElement signUpBtn = driver.findElement(By.name("websubmit"));
+signUpBtn.click();
+Thread.sleep(1000);
+System.out.println("Performed click action");
+driver.quit();
+}
+}
+
+
+
+WEEK-4------------------ALERT MESSAGE BANKING WEBSITE
+package two;
+
+
+import java.util.HashMap;
+import java.util.Map;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+	
+
+		public class week4{
+			public static void main(String[] args) throws InterruptedException
+			{
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			//add key and value to map as follow to switch off browser notification
+			//Pass the argument 1 to allow and 2 to block
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+			//Create an instance of ChromeOptions
+			ChromeOptions options = new ChromeOptions();
+			// set ExperimentalOption - prefs
+			options.setExperimentalOption("prefs", prefs);
+			//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver(options);
+			driver.manage().window().maximize();
+			driver.get("https://www.axisbank.com/");
+			Thread.sleep(2000);
+			WebElement popupClose =
+			driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]"));
+			popupClose.click();
+			driver.close();
+			Thread.sleep(2000);
+			}
+			}
+	
+
+
+
+WEEK-5------------------CMRIT RESULTS FETCH
+package two;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+public class week5a 
+{
+public static void main(String[] args) throws Exception
+{
+//System.setProperty("webdriver.chromedriver","C:\\Users\\student\\Downloads\\chromedriver-win64 (1).zip\\chromedriver-win64.exe");
+
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://cmrithyderabad.edu.in/");
+Thread.sleep(1000);
+WebElement searchBar = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[4]/a"));
+searchBar.click();
+Thread.sleep(1000);
+WebElement Results_Option = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[4]/ul/li[4]/a"));
+Results_Option.click();
+//WebElement Result_Page_Search_Input = driver.findElement(By.id("searchKey"));
+//Result_Page_Search_Input.sendKeys("II Year I Sem");
+//Thread.sleep(5000);
+WebElement Btech = driver.findElement(By.xpath("/html/body/div[3]/div[1]/form/div[3]/ul/li[2]/input"));
+Btech.click();
+Thread.sleep(1000);
+WebElement R22 = driver.findElement(By.xpath("//*[@id=\"R22\"]"));
+R22.click();
+Thread.sleep(1000);
+WebElement link = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/a[1]/div/div[1]"));
+link.click();
+Thread.sleep(1000);
+WebElement Rollnum = driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/form/input"));
+Rollnum.sendKeys("22R01A6232");
+Thread.sleep(1000);
+
+
+
+
+//driver.quit();
+
+}
+}
+
+
+
+
+
+
+WEEK-6------------------AJIO WEBSITE
+package two;
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class week6 {
+public static void main(String[] args) throws Exception {
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.get("https://www.ajio.com/");
+driver.manage().window().maximize();
+Thread.sleep(2000);
+WebElement ajioLink =
+driver.findElement(By.xpath("//span[normalize-space()='Sign In / Join AJIO']"));
+ajioLink.click();
+Thread.sleep(2000);
+WebElement facebookBtn =
+driver.findElement(By.xpath("//span[normalize-space()='Facebook']"));
+facebookBtn.click();
+Thread.sleep(2000);
+Set<String> parentWindow = driver.getWindowHandles();
+Iterator<String> iterator = parentWindow.iterator();
+while(iterator.hasNext())
+{
+	String childWindow = iterator.next();
+	if(!parentWindow.equals(childWindow))
+	{
+	driver.switchTo().window(childWindow);
+	}
+	}
+	WebElement emailOrMobileNo =
+	driver.findElement(By.xpath("//input[@id='email']"));
+	emailOrMobileNo.sendKeys("9133006212");
+	WebElement pwd = driver.findElement(By.xpath("//input[@id='pass']"));
+	pwd.sendKeys("Reddy6212");
+	//WebElement pwd2 = driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/input));
+	//pwd2.sendKeys("Martin@123");
+	
+	WebElement loginBtn = driver.findElement(By.cssSelector("body > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(4) > div:nth-child(16) > label:nth-child(2) > input:nth-child(1)"));
+			loginBtn.click();
+			}
+}
+
+
+
+
+
+WEEK-7------------------SEARCH CMRIT IN GOOGLE MASSS EASYYY GUYSS
+package two;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week7 {
+public static void main(String[] args) throws InterruptedException
+{
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com/");
+driver.manage().window().maximize();
+Thread.sleep(2000);
+WebElement searchBar = driver.findElement(By.name("q"));
+searchBar.sendKeys("CMRIT");
+searchBar.sendKeys(Keys.ENTER);
+Thread.sleep(15000);
+driver.quit();
+}
+}
+
+
+
+
+
+
+WEEK-8------------------CMRIT IMAGE DOWNLOAD
+package two;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+
+public class week8 {
+public static void main(String[] args) throws Exception {
+	//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.google.com/");
+	Thread.sleep(2000);
+	WebElement searchBar = driver.findElement(By.name("q"));
+	searchBar.sendKeys("CMRIT");
+	searchBar.sendKeys(Keys.ENTER);
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//a[normalize-space()='Images']")).click();
+	WebElement Image = driver.findElement(By.xpath("/html/body/div[4]/div/div[15]/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div[1]/div[2]/h3/a/div/div/div/g-img/img"));
+	Actions action = new Actions(driver);
+	action.contextClick(Image).build().perform();
+	Robot robot = new Robot();
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	//robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(500);
+	robot.keyPress(KeyEvent.VK_ENTER);
+	Thread.sleep(3000);
+	robot.keyPress(KeyEvent.VK_ENTER);
+	System.out.println("downloaded");
+	//driver.close();
+	}
+	}
+
+
+
+
+
+
+WEEK-9------------------PRINT LIST OF ITEMS IN A LIST
+package dilip;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class llist {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.zomato.com/hyderabad/newly-opened");
+		WebElement loginBtn = driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[2]/div[2]/div[2]/section/a/section/section/div/h6"));
+		loginBtn.click();
+		List<WebElement> m = driver.findElements(By.xpath("/html/body/div[1]/div/div[3]/div/section[1]"));
+		for(int i = 0; i< m.size(); i++) {
+		String s = m.get(i).getText();
+		System.out.println("Text is: " + s);
+			      }
+		
+       driver.quit();
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+
+
+
+
+WEEK-10------------------GMAIL VALIDATION
+package dilip;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class jj {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AdF4I76OeN-kJ1RMxRzs6bjjYR39Y7ggkomY2bImtb2s3gD2phO2UsL3GQ3DtQJ0iIbKU0ED-EqV&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1409743055%3A1720373371257348&ddm=0");
+		WebElement acnt=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[1]/div/button/span"));
+		acnt.click();
+		Thread.sleep(2000);
+		WebElement personal=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[3]"));
+		personal.click();
+		Thread.sleep(2000);
+		WebElement firstname=driver.findElement(By.name("firstName"));
+		firstname.sendKeys("nerella");
+		Thread.sleep(2000);
+		WebElement lastname=driver.findElement(By.name("lastName"));
+		lastname.sendKeys("vaishnavi");
+		Thread.sleep(2000);
+		WebElement nxt=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div/div/div/button/span"));
+		nxt.click();
+		Thread.sleep(2000);
+
+		Select month=new Select(driver.findElement(By.id("month")));
+		month.selectByValue("6");
+		Thread.sleep(2000);
+		WebElement day=driver.findElement(By.name("day"));
+		day.sendKeys("12");
+		Thread.sleep(2000);
+		WebElement ear=driver.findElement(By.name("year"));
+		ear.sendKeys("2003");
+		Thread.sleep(2000);
+		Select gender=new Select(driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[2]/div/div/div/form/span/section/div/div/div[2]/div[1]/div/div[2]/select")));
+		gender.selectByVisibleText("Female");
+		Thread.sleep(2000);
+		WebElement nex=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div/div/div/button/span"));
+		nex.click();
+		Thread.sleep(2000);
+		WebElement btn =driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/span/div[2]/div/div[1]/div/div[3]"));
+		btn.click();
+		Thread.sleep(2000);
+		WebElement nextt=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div/div/div/button/span"));
+		nextt.click();
+		Thread.sleep(2000);
+		WebElement pwd=driver.findElement(By.name("Passwd"));
+		pwd.sendKeys("nerella@123");
+		Thread.sleep(2000);
+		WebElement conpwd=driver.findElement(By.name("PasswdAgain"));
+		conpwd.sendKeys("nerella@123");
+		Thread.sleep(2000);
+		WebElement nextt1=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div/div/div/button"));
+		nextt1.click();
+		Thread.sleep(2000);
+
+		driver.quit();
+	}
+
+}
+
+
+
+
+
+
+
+WEEK-11------------------MYNTRA WEBSITE
+package two;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class week11 {
+public static void main(String[] args) throws InterruptedException
+{
+// System property for chrome driver
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+//Using driver ref variable creating new obj for chromedriver
+WebDriver driver = new ChromeDriver();
+//Maximizing the chrome browser
+driver.manage().window().maximize();
+//MouseActions
+//Actions builder = new Actions(driver);
+driver.get("https://www.google.com/");
+//Fetching the google searchBar
+WebElement searchBar = driver.findElement(By.name("q"));
+//Sending myntra in searchbar
+searchBar.sendKeys("Myntra");
+Thread.sleep(1000);
+//Submitting the data
+searchBar.submit();
+//Fetching myntralink from google search
+WebElement myntraLink =
+driver.findElement(By.xpath("/html/body/div[4]/div/div[12]/div[1]/div[1]/div[2]/div/div/div/div/div/div[1]/a/div[2]/span[1]/span[2]/span[2]/span"));
+myntraLink.click();
+WebElement profileHyperLink =
+driver.findElement(By.xpath("(//span[normalize-space()='Profile'])[1]"));
+profileHyperLink.click();
+WebElement loginBtn =
+driver.findElement(By.xpath("(//a[normalize-space()='login / Signup'])[1]"));
+loginBtn.click();
+WebElement mobileNo =
+driver.findElement(By.xpath("(//input[@type='tel'])[1]"));
+mobileNo.sendKeys("9948621049");
+WebElement continueBtn =
+driver.findElement(By.xpath("(//div[@class='submitBottomOption'])[1]"));
+continueBtn.click();
+Thread.sleep(25000);
+WebElement continueBtn1 =
+driver.findElement(By.xpath("(//div[@class='submitBottomOption'])[1]"));
+continueBtn1.click();
+Thread.sleep(3000);
+/*WebElement otp01 =
+driver.findElement(By.xpath("(//input[@name='otp0'])[1]"));
+otp01.sendKeys("1");
+WebElement otp02 =
+driver.findElement(By.xpath("(//input[@name='otp1'])[1]"));
+otp02.sendKeys("2");
+WebElement otp03 =
+driver.findElement(By.xpath("(//input[@name='otp2'])[1]"));
+otp03.sendKeys("3");
+WebElement otp04 =
+driver.findElement(By.xpath("(//input[@name='otp3'])[1]"));
+otp04.sendKeys("4");*/
+
+driver.close();
+}
+}
+
+
+
+
+
+WEEK-12------------------WORD TO PDF CONVERT
+package two;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week12
+{
+public static void main(String[] args) throws Exception
+{
+//System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://www.google.com/");
+Thread.sleep(2000);
+
+WebElement searchBar = driver.findElement(By.name("q"));
+searchBar.sendKeys("Convert word to pdf online");
+searchBar.sendKeys(Keys.ENTER);
+WebElement pdfToWord = driver.findElement(By.xpath("/html/body/div[4]/div/div[12]/div/div[2]/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/div/span/a/h3"));
+pdfToWord.click();
+Thread.sleep(500);
+WebElement chooseFileBtn = driver.findElement(By.xpath("(//span[normalize-space()='Choose Files'])[1]"));
+chooseFileBtn.click();
+Thread.sleep(500);	
+Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+StringSelection str = new StringSelection("Downloads\\raks");
+clipboard.setContents(str,null);
+Thread.sleep(500);
+Robot robot = new Robot();
+robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_V);
+robot.keyPress(KeyEvent.VK_ENTER);
+Thread.sleep(10000);
+WebElement download = driver.findElement(By.xpath("(//span[normalize-space()='Download'])"));
+download.click();
+driver.close();
+
+}	
+}
+
+
+
+
+
+
+
