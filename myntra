@@ -11,17 +11,11 @@ public class myntra {
 	System.setProperty("webdriver.chrome.driver","C:\\Users\\BALA PAVAN KUMAR\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
-	//MouseActions
-	//Actions builder = new Actions(driver);
 	driver.get("https://www.google.com/");
-	//Fetching the google searchBar
 	WebElement searchBar = driver.findElement(By.name("q"));
-	//Sending myntra in searchbar
 	searchBar.sendKeys("Myntra");
 	Thread.sleep(1000);
-	//Submitting the data
 	searchBar.submit();
-	//Fetching myntralink from google search
 	WebElement myntraLink =
 	driver.findElement(By.xpath("/html/body/div[4]/div/div[12]/div[1]/div[1]/div[2]/div/div/div/div/div/div[1]/a/div[1]/span"));
 	myntraLink.click();
